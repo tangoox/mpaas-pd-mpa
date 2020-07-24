@@ -1,0 +1,110 @@
+@import "../common/BaseStyle";
+
+.history_net_worth {
+  .history_net_worth_content {
+    .whl(100%,calc(100vh - @navbarHeight),normal);
+    padding: 20px 30px 20px 30px;
+    .history_net_worth_title {
+      background: #F3F4F6;
+      .whl(100%,94px);
+      display: flex;
+      flex-direction: row;
+      border-radius: 8px;
+      .base-font(28px, #7D7D7D);
+      justify-content: space-between;
+      align-items: center;
+      span{display:inline-block;text-align:right;.whl(100%,94px,94px);padding:0 30px;
+        &.date{text-align:center!important;}
+      }
+    }
+
+    .history_net_worth_body{
+      .whl(100%,calc(100vh - @navbarHeight - 135px),normal);
+      .history_net_worth_list {
+        .whl(100%,calc(100vh - @navbarHeight - 135px),normal);
+        /*滚动加载*/
+        .am-list-view-scrollview{.whl(100%,calc(100vh - @navbarHeight - 135px),normal);
+          .am-list-view-scrollview-content{.whl(100%,calc(100vh - @navbarHeight - 135px),normal); }
+          .am-list-body{
+            &::before,&::after{background-color:transparent!important;}
+          }
+        }
+        overflow:hidden;
+        overflow-y:auto;
+        flex-direction: column;
+        display: flex;
+        .list_row {
+          .whl(100%,94px);
+          background: #F8F8F8;
+          display: flex;
+          .base-font(28px, #666666);
+          justify-content: space-between;
+          align-items: center;
+          &.rows{background:@white!important;}
+          span{display:inline-block;text-align:right;.whl(100%,94px,94px);.base-font(28px, #666666);overflow:hidden;text-overflow:ellipsis;padding:0 30px;
+            &:first-child{text-align:center!important;.base-font(28px, @standardGray_section);}
+            &:last-child{.base-font(28px,@mainGray)}
+          }
+        }
+      }
+    }
+  }
+
+}
+
+/** 净值搜索 */
+
+.worth-search-container{.whl(100%,100vh);
+  .inavbar{
+    i.closeS{.whl(33px,33px,normal);.bg-image('../../assets/netWorthQueryImg/alert-close')}
+    .navbar-right{
+      i{.base-font(32px,@mainGray);width:auto!important;}
+    }
+  }
+  .search-body{
+    padding: @navbarHeight+23.5px 30px 0 30px;
+    .am-picker{
+      .am-picker-col{
+        height: 600px!important;
+      }
+    }
+    .search{
+      background: #FFFFFF;
+      border: 1.09px solid #AFAFAF;
+      border-radius: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      .whl(100%,72px);
+      input{
+        .whl(100%,40px,40px);
+        border:0;/*去掉未选中状态边框*/
+        outline:none;/*去掉选中状态边框*/
+        background-color:rgba(0,0,0,0);/*透明背景*/
+        padding-right: 15px;
+        .base-font(30px, @mainGray);
+      }
+      input::placeholder{.base-font(30px, #AFAFAF);}
+      .right{
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("../../assets/home/searchtop@3x.png");
+      }
+    }
+    .am-picker-col-item{
+      .base-font(30px, #7d7d7d)
+    }
+    /*产品列表*/
+    .productLists{.whl(100%,calc(100vh - @navbarHeight - 72px - 30px));overflow:hidden;overflow-y:auto;
+        ul{
+          li{.whl(100%,auto);padding:30px 0;border-bottom:solid 1PX #DDD;.base-font(30px,@standardGray_section);
+            &:last-child{border-bottom:0!important;}
+            &.check{.base-font(30px,@standardRed);border-color:@standardGray_section}
+          }
+        }
+    }
+  }
+}

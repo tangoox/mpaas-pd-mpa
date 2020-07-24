@@ -1,0 +1,17 @@
+{
+    "data":{
+        "items":[{ 
+            "title": "新业务", 
+            "img": "home_newInfo_img\/newBusiness@3x.png",
+            "route": ""           
+        }, {
+            "title": "新通知", 
+            "img": "home_newInfo_img\/newNotice@3x.png",
+            "route": ""
+        }, {
+            "title": "微课堂", 
+            "img": "home_newInfo_img\/microClass@3x.png",
+            "route": ""
+        }]
+    }
+ }

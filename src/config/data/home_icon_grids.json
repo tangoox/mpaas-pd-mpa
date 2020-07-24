@@ -1,0 +1,45 @@
+{
+    "data":{
+        "items":[{
+            "title": "净值查询",
+            "img": "home_icon_grids_img\/networth@3x.png",
+            "route": "/netWorthQuery",
+            "code": "400001"
+        }, {
+            "title": "确认汇总",
+            "img": "home_icon_grids_img\/ConfirmSummary@3x.png",
+            "route": "/confirm-summary",
+            "code": "400002"
+        }, {
+            "title": "客户份额",
+            "img": "home_icon_grids_img\/customerShare@3x.png",
+            "route": "/customers-share",
+            "code": "400003"
+        }, {
+            "title": "业务白皮书",
+            "img": "home_icon_grids_img\/whiteBook@3x.png",
+            "route": "/white-paper",
+            "code": "400004"
+        }, {
+            "title": "产品信息",
+            "img": "home_icon_grids_img\/productInfo@3x.png",
+            "route": "/productDetail",
+            "code": "400005"
+        }, {
+            "title": " 开放日",
+            "img": "home_icon_grids_img\/openDay@3x.png",
+            "route": "/openDay",
+            "code": "400006"
+        }, {
+            "title": "流水查询",
+            "img": "home_icon_grids_img\/runingQuery@3x.png",
+            "route": "/flowQuery",
+            "code": "400007"
+        }, {
+            "title": "已付税费",
+            "img": "home_icon_grids_img\/taxQuery@3x.png",
+            "route": "/taxQuery",
+            "code": "400008"
+        }]
+    }
+ }

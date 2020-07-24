@@ -1,0 +1,474 @@
+@import "../common/BaseStyle";
+
+.net_worth_query {
+  padding-top: 40px;
+  .inavbar{
+    margin-top: 40px;
+    .navbar-left{flex:0 0 40px;
+      i{width:50px!important; padding-right:0!important;}
+    }
+    .navbar-title{flex:1;
+      .search_body,.searchInput_box{width:100% !important;}
+      input[disabled],input:disabled,input.disabled{
+        .base-font(32px,@mainGray);
+        -webkit-text-fill-color:@mainGray !important;
+        -webkit-opacity:1;
+        opacity: 1;
+      }
+      input[placeholder],input::placeholder{
+        .base-font(32px,@standardGray_assist);
+        -webkit-text-fill-color:@standardGray_assist;
+        -webkit-opacity:1;
+        opacity: 1;
+      }
+      .searchInput_box{box-shadow: 0 1px 10px 0 rgba(67,67,67,0.14);border-radius: 39px;}
+    }
+    .navbar-right{flex:0;margin-left:0!important;}
+  }
+
+  /* 搜索栏样式 */
+  .search_body {
+    .searchInput_box{
+      width: 80%;
+      height: 78px;
+      border-radius: 34px;
+      border: 1px solid @standardGray_input_border;
+      display: flex;
+      .productList_searchInput{
+        color: red;
+        width: 90%;
+        height: 76px;
+        align-items: center;
+        line-height: inherit;
+        background-color:transparent ;
+        margin-top:1px;
+        .am-list-line{
+          height: 76px;
+          line-height: 76px;
+          padding-right: 0px;
+          .am-input-control{
+            height: 76px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            input{
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
+              .base-font(28px,@standardBlack_title);
+            }
+          }
+          &::after{
+            display: none;
+          }
+        }
+      }
+      .productList_searchInput_searchLogoArea{
+        .bg-image('../../assets/netWorthQueryImg/product_name');
+        background-size: 36px 36px;
+        background-repeat: no-repeat;
+        background-position: 0 16px;
+        width: 10%;
+        height: 78px;
+      }
+    }
+  }
+  /* 净值查询页面 */
+  .net_worth_body {
+    overflow-y: scroll;
+    height: calc(100vh  - @navbarHeight);
+    .net_worth-form {
+      display:flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 90px;
+      padding: 0px 30px 0 40px;
+      .comparison_product {
+        display:flex;
+        align-items: center;
+        height: 40px;
+        width: 300px;
+        justify-content: flex-end;
+        .name {
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+          font-family: PingFangSC-Regular;
+          font-size: 28px;
+          color: #7D7D7D;
+          text-align: left;
+          width: 171px;
+        }
+        .name_val {
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+          font-family: PingFangSC-Regular;
+          font-size: 28px;
+          color: #3E3E3E;
+          text-align: right;
+          width: 300px;
+        }
+        .right_arrow{
+          right: 28px;
+          width: 28px;
+          height: 28px;
+          .bg-image('../../assets/common/downArrow');
+          background-size: 28px;
+        }
+      }
+      .select{
+        position: relative;
+        display: inline-block;
+        opacity:0.5;
+        font-family: PingFangSC-Regular;
+        font-size: 28px;
+        color: #DDDDDD;
+        text-align: left;
+      }
+      .parameter_index {
+        display:flex;
+        align-items: center;
+        height: 40px;
+        width: 150px;
+        .name {
+          font-family: PingFangSC-Regular;
+          font-size: 28px;
+          color: #7D7D7D;
+          text-align: left;
+        }
+        .name_val {
+          font-family: PingFangSC-Regular;
+          font-size: 28px;
+          color: #3E3E3E;
+          text-align: left;
+        }
+        .right_arrow{
+          right: 28px;
+          width: 28px;
+          height: 28px;
+          .bg-image('../../assets/common/downArrow');
+          background-size: 28px;
+        }
+      }
+      .select_times {
+        display:flex;
+        align-items: center;
+        height: 40px;
+        // width: 150px;
+        .name {
+          font-family: PingFangSC-Regular;
+          font-size: 28px;
+          color: #7D7D7D;
+          text-align: left;
+        }
+        .name_val {
+          font-family: PingFangSC-Regular;
+          font-size: 28px;
+          color: #3E3E3E;
+          text-align: left;
+        }
+        .right_arrow{
+          right: 28px;
+          width: 28px;
+          height: 28px;
+          .bg-image('../../assets/common/downArrow');
+          background-size: 28px;
+        }
+      }
+    }
+
+    .flex_choice {.whl(100%,auto,normal);display:flex;justify-content:space-between;padding-left:30px;margin-bottom:15px;
+      .choice1{flex:0 0 400px;display:flex;justify-content:space-between;margin-top: 10px;
+        .curve{.whl(190px,68px,68px);border-radius:34px;border:solid 1.01px #AFAFAF;text-align:center;.base-font(28px,#7D7D7D);margin-top:19px;}
+        .is_curve{border:1.01px solid #F15353!important;.base-font(28px,#F15353)}
+      }
+      .choice2{flex:1;
+        .select_contain_pb {.container_select_pb {.select_area_pb {border: 1.01px solid #DDDDDD;}}}
+        .container_label_pb{flex:0;}
+        .container_select_pb{flex: 1}
+        .select_contain_pb{padding:30px 30px 0;}
+      }
+    }
+
+    .growthRateFormula {
+      padding-left: 51px; //UI 图中是71px 实际测试减低20PX
+      padding-right: 41px;
+      color: #7D7D7D;
+      .back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 76px;
+        .bg-image("../../assets/growthRateFormula");
+        .content {
+          margin: auto;
+          align-self: center;
+
+          .big_size {
+            font-family: Helvetica-Light;
+            font-size: 32px;
+          }
+          .min_size {
+            font-family: Helvetica;
+            font-size: 8px;
+          }
+          .center_size {
+            font-family: PingFangSC-Light;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .flex_show_value {
+      margin-top: 41px;
+      margin-left: 41px;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 132px;
+      .newest {
+
+        .name {
+          text-align: left;
+          line-height: 48px;
+          .base-font(28px; #afafaf);
+        }
+
+        .value {
+          .base-font(32px; #101010;);
+          text-align: left;
+          line-height: 48px;
+        }
+      }
+
+      .cumulative {
+
+        .name {
+          text-align: left;
+          line-height: 48px;
+          .base-font(28px; #afafaf);
+        }
+
+        .value {
+          .base-font(32px; #000000;);
+          text-align: left;
+          line-height: 48px;
+        }
+      }
+
+      .growth_rate {
+        .name {
+          text-align: left;
+          line-height: 48px;
+          .base-font(28px; #afafaf);
+        }
+
+        .value {
+          .base-font(32px; #000000;);
+          text-align: left;
+          line-height: 48px;
+        }
+      }
+    }
+
+    .tabs_style {
+      margin-top: 6%;
+      /*lineChart*/
+      .chart_hd{.whl(100%,auto,normal);display:flex;justify-content:space-between;padding:0 20px 8px;
+        span{.base-font(20px,#787D86);opacity: 0.8;}
+      }
+      #chartsLine{.whl(100%,316px,normal);padding:0 10px;height: 400px;}
+      .net_worth_curve_card {
+        .text {
+          text-align: center;
+        }
+      }
+
+      .growth_rate_curve_card {
+
+      }
+    }
+
+    .history_net_worth_curve {
+      padding-bottom: 30px;
+      .history_list {
+        .list_info_title {
+          padding-left: 30px;
+          padding-right: 30px;
+          .whl(100%, auto, normal);
+          display: flex;
+          justify-content: space-between;
+          height: 70px;line-height:60px;padding-bottom:10px;
+
+          .titleText {
+            width: 140px;
+            font-family: PingFangSC-Medium;
+            font-size: 28px;
+            color: #7D7D7D;
+          }
+
+          .more {
+            margin-right: 30px;
+            text-align: right;
+            .base-font(24px; #AFAFAF);
+          }
+        }
+
+        .list_info {
+          padding-left: 30px;
+          padding-right: 30px;
+          padding-bottom: 10px;
+          margin-top: 40px;
+          .list_title {
+            background: #F3F4F6;
+            .whl(100%,94px);
+            display: flex;
+            flex-direction: row;
+            border-radius: 8px;
+            .base-font(28px, #7D7D7D);
+            justify-content: space-between;
+            align-items: center;
+            span{display:inline-block;text-align:right;.whl(100%,94px,94px);padding:0 30px;
+              &.date{text-align:center!important;}
+            }
+          }
+
+          .list_content {
+            overflow: hidden;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;padding-bottom:30px;
+            .list_row {
+              .whl(100%,94px);
+              background: #F8F8F8;
+              display: flex;
+              .base-font(28px, #7d7d7d);
+              justify-content: space-between;
+              align-items: center;
+              &.rows{background:@white!important;}
+              span{display:inline-block;text-align:right;.whl(100%,94px,94px);.base-font(28px, @standardGray_section);overflow:hidden;text-overflow:ellipsis;padding:0 30px;
+                &:first-child{text-align:center!important;}
+                &:last-child{.base-font(28px,@mainGray)}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal_css{
+  height: 540px;
+}
+
+/* 弹出层样式 */
+.select_time_window {
+  .select_time_window_top {
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    .title_name {
+      padding-right: 28px;
+      padding-top: 22px;
+      font-family: PingFangSC-Regular;
+      font-size: 32px;
+      color: #AFAFAF;
+    }
+  }
+
+  .select_time_window_content {
+    display: flex;
+    flex-wrap: wrap;padding:30px 0;
+    ._value {
+      margin-top: 44px;
+      margin-left: 50px;
+    }
+    .btn{
+      height: 78px;
+      width: 184px;
+      position: relative;
+      padding: 10px 25px;
+      border: 1.0001px solid #979797;
+      border-radius: 8px;
+      background: #F3F4F6;
+    }
+  }
+}
+
+/* 参考指数弹出层 */
+.parameter_index_window {
+  .parameter_index_top {
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+  }
+  .title_name{.base-font(32px,@mainGray)}
+
+  .parameter_index_content {
+    display: flex;
+    flex-wrap: wrap;
+    ._value {
+      margin-top: 44px;
+      margin-left: 77px;
+    }
+    .btn{
+      height: 78px;
+      width: 258px;
+      position: relative;
+      padding: 10px 25px;
+      border: 1.0001px solid #979797;
+      border-radius: 8px;
+      background: #F3F4F6;
+      font-family: PingFangSC-Regular;
+      font-size: 30px;
+      color: #3E3E3E;
+    }
+  }
+}
+.select_time_window,.parameter_index_window{
+  .back_icon {
+    margin-left: 20px;
+    margin-top: 30px;
+    height: 32px;
+    width: 32px;
+    .bg-image('../../assets/netWorthQueryImg/alert-close');
+  }
+  .title_name {
+    padding-right: 28px;
+    padding-top: 22px;
+    font-family: "PingFangSC-Regular";
+    font-size: 32px;
+    color: #AFAFAF;
+  }
+  .btn{
+    &.active{background: #FFD9DA!important;
+      border: 1PX solid @standardRed!important;.base-font(30px,@standardRed);
+      &::before{
+        content: "";
+        position: absolute;
+        top: -1PX;
+        right: 11px;
+        width: 10px;
+        height: 16px;
+        border: 3px solid #fff;
+        border-left: none;
+        border-top: none;
+        transform: rotate(45deg);
+        z-index: 2;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        width: 38px;
+        height: 24px;
+        background: #F15353;
+        border-radius: 0 8px 0 0;
+        z-index: 1;
+      }
+    }
+  }
+}

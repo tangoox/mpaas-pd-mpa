@@ -1,0 +1,24 @@
+{
+    "data":{
+        "dura":"5",
+        "items":[{ 
+            "title": "中信建投|歌力思投资者交流", 
+            "img": "research_activity_banner_img\/1.png",
+            "time": "2020-04-20",
+            "form": "电话会议",
+            "id": 1            
+        }, {
+            "title": "中信建投|十日谈", 
+            "img": "research_activity_banner_img\/2.png",
+            "time": "2020-04-21",
+            "form": "现场会议",
+            "id": 2
+        }, {
+            "title": "中信建投|线下活动", 
+            "img": "research_activity_banner_img\/3.png",
+            "time": "2020-04-21",
+            "form": "联合调研",
+            "id": 3
+        }]
+    }     
+ }

@@ -1,0 +1,28 @@
+/*通用navbar样式*/
+@import "common/BaseStyle";
+.navbar-title{justify-content:center;white-space: nowrap;}
+.inavbar{background-color:transparent;padding:44px 30px 0;display:flex;.whl(100%,@navbarHeight,normal);align-items:center;position:fixed;top:0;left:0;z-index:2; /*默认透明背景*/
+  .navbar-left,.navbar-title,.navbar-right{display:flex;flex:1 1;align-items:center;height:100%;}
+  .leftback{padding-right:30px;.whl(70px,99px,99px);
+    &::before{
+      content: '';display: inline-block;border-top: 2px solid;border-right: 2px solid; width:18px;height: 18px;border-color:#222222;transform: rotate(-135deg);
+    }
+    &.whtback{
+      &::before{border-color:@white;}
+    }
+  }
+  .navbar-title{.base-font(32px,@standardBlack_title);}
+  .navbar-right{-webkit-box-pack: end;-webkit-justify-content: flex-end; -ms-flex-pack: end;justify-content: flex-end;margin-left: 15px;.base-font(16px,@mainGray);
+    i{.whl(38px,38px,normal);margin-left:20px;}
+  }
+
+  /*扩展*/
+  &.bgnavbar{.bg-image('../../assets/top'); /*图片背景*/
+    .navbar-left,.navbar-title,.navbar-right{.base-font(32px,@white)}
+  }
+  &.whtnavbar{background-color:@white;} /*白色背景*/
+  &.linenavbar{border-bottom:solid 1px #DDD;}
+  &.whtNavLabel{
+    .navbar-title{.m-font(32px,@white);}
+  }
+}

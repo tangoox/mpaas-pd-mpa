@@ -1,0 +1,46 @@
+@import "../../css/common/BaseStyle";
+.searchInput_box{
+    width:100% !important;
+    height: 78px;
+    border-radius: 34px;
+    border: 1px solid @standardGray_input_border;
+    display: flex;
+    box-shadow: 0 1px 10px 0 rgba(67,67,67,0.14);border-radius: 39px;
+    .productList_searchInput{
+      color: red;
+      width: 90%;
+      height: 76px;
+      align-items: center;
+      line-height: inherit;
+      background-color:transparent ;
+      margin-top:1px;
+      .am-list-line{
+        height: 76px;
+        line-height: 76px;
+        padding-right: 0px;
+        .am-input-control{
+          height: 76px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          input{
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            .base-font(28px,@standardBlack_title);
+          }
+        }
+        &::after{
+          display: none;
+        }
+      }
+    }
+    .productList_searchInput_searchLogoArea{
+      .bg-image('../../assets/netWorthQueryImg/product_name');
+      background-size: 36px 36px;
+      background-repeat: no-repeat;
+      background-position: 0 16px;
+      width: 10%;
+      height: 78px;
+    }
+  }

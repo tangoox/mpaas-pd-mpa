@@ -1,0 +1,145 @@
+.flowSteps{
+    padding: 36px 88px 0 22px;
+
+    .startFlow{
+        padding-left:56px;
+        padding-right:80px;
+        width: 640px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .statusText{
+        font-size: 22px;
+        // padding-left:6px ;
+        line-height: 78px;
+        color: #999999;
+    }
+    .endFlow{
+        padding-left:70px;
+        display: flex;
+        width: 640px;
+        justify-content: space-between;
+    }
+    .step{
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left:80px;
+        .step-container{
+            width: 640px;
+        }
+        ul,li{
+            list-style: none;
+            
+        }
+        .topUl{
+            display: flex;
+            // flex-wrap: wrap;
+            align-items: center;
+            height: 15px;
+            width: 640px;
+            li:nth-child(odd){
+                width: 15px;
+                height: 15px;
+                background-color: #ddd;
+                border-radius: 7.5px;
+                margin:0 7.5px;
+            }
+            li:nth-child(even){
+                width:81px;
+                height: 4px;
+                background-color: #ddd;
+            }
+           
+        }
+        .placeOlder{
+            height: 85px;
+        }
+        .bottomUl{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 15px;
+            width: 640px;
+            li:nth-child(odd){
+                width: 15px;
+                height: 15px;
+                background-color: #ddd;
+                border-radius: 7.5px;
+                margin:0 7.5px;
+            }
+            li:nth-child(even){
+                width:120px;
+                height: 4px;
+                background-color: #ddd;
+            }
+        }
+        .isActive{
+            background-color: #EC3E42 !important;
+        }
+        .roundBorder{
+            width: 90px;
+            height: 108px;
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 60px;
+            border-top: 4px solid #ddd;
+            border-bottom: 4px solid #ddd;
+            border-right: 4px solid #ddd;
+            position: absolute;
+            right: -10px;
+            
+        }
+        .isActiveBorder{
+            // background-color: #EC3E42 !important;
+            border-top: 4px solid  #EC3E42 !important;
+            border-bottom: 4px solid  #EC3E42 !important;
+            border-right: 4px solid  #EC3E42 !important;
+        }
+        .sub-title {
+            color: #888;
+            font-size: 14px;
+            padding: 30px 0 18px 0;
+          }
+    }
+    
+}
+.flow{
+    padding:62px 40px 0 40px;
+    width: 100%;
+    .flowTitle{
+        line-height: 50px;
+        font-size: 36px;
+        color: #222222;
+        // font-weight: 600;
+        margin-bottom: 71px;
+       
+        
+    }
+    .am-steps-item-title{
+        font-size: 22px;
+        color: #999999;
+        text-align: left;
+        line-height: 22px;
+        padding-left: 40px;
+    }
+    .am-steps-item-description{
+        font-size: 28px;
+        color: #222222;
+        padding: 20px 0 46px 40px;
+    }
+    .stepIcon{
+        width: 28px;
+        height: 28px;
+        background-image: url('../../assets/hs/时钟@2x.png');
+        background-size: cover;
+        // padding: 6px;
+    }
+    .am-steps-item-custom .am-steps-item-icon{
+        margin-top:2px;
+        margin-bottom:2px;
+    }
+    .am-steps-item-finish .am-steps-item-tail:after{
+        background-color: #ddd;
+    }
+}

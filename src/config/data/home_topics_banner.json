@@ -1,0 +1,21 @@
+{
+    "data":{
+        "dura":3,
+        "items":[{
+            "title": "", 
+            "img": "home_topics_banner_img\/2.png",
+            "id": 1,
+            "path": ""
+        }, {
+            "title": "", 
+            "img": "home_topics_banner_img\/3.png",
+            "id": 2,
+            "path": ""
+        }, {
+            "title": "托管外包服务介绍", 
+            "img": "home_topics_banner_img\/1.png",
+            "id": 3,
+            "path": "/service-intro"
+        }]
+    }     
+ } 
