@@ -531,33 +531,63 @@ module.exports = function(webpackEnv) {
       // Generates an `index.html` file with the <script> injected.
       //根据entry数组配置多页面入口
       ...Object.keys(paths.entries).map((name) => {
-        return new HtmlWebpackPlugin(
-          Object.assign(
-            {},
-            {
-              inject: true,
-              chunks: [name],
-              template: paths.appHtml,
-              filename: name + '.html',
-            },
-            isEnvProduction
-              ? {
-                  minify: {
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    removeRedundantAttributes: true,
-                    useShortDoctype: true,
-                    removeEmptyAttributes: true,
-                    removeStyleLinkTypeAttributes: true,
-                    keepClosingSlash: true,
-                    minifyJS: true,
-                    minifyCSS: true,
-                    minifyURLs: true,
-                  },
-                }
-              : undefined
+        if(name.split("/").length<=3){
+          return new HtmlWebpackPlugin(
+            Object.assign(
+              {},
+              {
+                inject: true,
+                chunks: [name],
+                template: paths.appHtml,
+                filename: 'index.html',
+              },
+              isEnvProduction
+                ? {
+                    minify: {
+                      removeComments: true,
+                      collapseWhitespace: true,
+                      removeRedundantAttributes: true,
+                      useShortDoctype: true,
+                      removeEmptyAttributes: true,
+                      removeStyleLinkTypeAttributes: true,
+                      keepClosingSlash: true,
+                      minifyJS: true,
+                      minifyCSS: true,
+                      minifyURLs: true,
+                    },
+                  }
+                : undefined
+            )
           )
-        )
+        }else{
+          return new HtmlWebpackPlugin(
+            Object.assign(
+              {},
+              {
+                inject: true,
+                chunks: [name],
+                template: paths.appHtml,
+                filename: name + '.html',
+              },
+              isEnvProduction
+                ? {
+                    minify: {
+                      removeComments: true,
+                      collapseWhitespace: true,
+                      removeRedundantAttributes: true,
+                      useShortDoctype: true,
+                      removeEmptyAttributes: true,
+                      removeStyleLinkTypeAttributes: true,
+                      keepClosingSlash: true,
+                      minifyJS: true,
+                      minifyCSS: true,
+                      minifyURLs: true,
+                    },
+                  }
+                : undefined
+            )
+          )
+        }
     }),    
       // new HtmlWebpackPlugin(
       //   Object.assign(

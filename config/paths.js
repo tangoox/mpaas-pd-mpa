@@ -65,7 +65,11 @@ const entries = getEntries('src/**/index.js');
 function getIndexJs() {
   const indexJsList = [];
   Object.keys(entries).forEach((name) => {
-    const indexjs = resolveModule(resolveApp, `src/${name}/index`)
+    let indexjs;
+    if(name.split("/").length<4) {indexjs=resolveModule(resolveApp, `src/index`)}
+    else{
+       indexjs = resolveModule(resolveApp, `src/${name}/index`)
+    }
     indexJsList.push({
       name,
       path: indexjs
@@ -83,7 +87,7 @@ module.exports = {
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appIndexJs: indexJsList, //+++++++++
-  // appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appIndexJsOld: resolveModule(resolveApp, 'src/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
