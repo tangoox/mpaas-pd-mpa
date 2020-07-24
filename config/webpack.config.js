@@ -531,7 +531,7 @@ module.exports = function(webpackEnv) {
       // Generates an `index.html` file with the <script> injected.
       //根据entry数组配置多页面入口
       ...Object.keys(paths.entries).map((name) => {
-        if(name.split("/").length<=3){
+        if(name==="src"){
           return new HtmlWebpackPlugin(
             Object.assign(
               {},

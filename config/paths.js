@@ -48,6 +48,7 @@ const resolveModule = (resolveFn, filePath) => {
   return resolveFn(`${filePath}.js`);
 };
 const glob = require('glob');
+const { error } = require('console');
 // 获取指定路径下的入口文件
 function getEntries(globPath) {
   const files = glob.sync(globPath),
@@ -66,7 +67,7 @@ function getIndexJs() {
   const indexJsList = [];
   Object.keys(entries).forEach((name) => {
     let indexjs;
-    if(name.split("/").length<4) {indexjs=resolveModule(resolveApp, `src/index`)}
+    if(name==="src"){indexjs=resolveModule(resolveApp, `src/index`)}
     else{
        indexjs = resolveModule(resolveApp, `src/${name}/index`)
     }
