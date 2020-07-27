@@ -947,6 +947,22 @@ class Home extends Component {
         bd_router.push(this.props.history,"/common-search",{data:{productNo:this.state.searchProductNo,backEvent:"home_selectProduct",dataKey:"home_searchList"}});
         bd_storage.set('home_searchList',this.state.productList);
     }
+    gopage=()=>{
+        window.location.href="./page2.html"
+    }
+    gopage2=()=>{
+        Tip.info("打开");
+        if (window.AlipayJSBridge){
+            Tip.info("打开1");
+            let params = {url: "./page3.html"}
+            window.AlipayJSBridge.call('pushWindow',
+                params,
+                (result) => {
+                    Tip.info(result ? result.code : "打开失败");
+                }
+            );
+        }
+    }
     render() {
         const {cpId}=this.state;
         const label=cpId?"注销":"登录";
@@ -968,7 +984,7 @@ class Home extends Component {
                         <NewInfo parentPropsHistory={this.props.history} />
                         {/* <GetproductTotal props={this.state.productData}/> */}
                         <section className='product'>
-                            <div className='productAcount'>
+                            <div className='productAcount' onClick={this.gopage2}>
                                 产品总数: <span className={cpId?"":"unload"}>{cpId?this.state.productData['productNum'] || 0:"请登录后查看"}</span>
                             </div>
                             <div className='productMain'>
